@@ -6,5 +6,3 @@ def read():
         for line in file:
             words_spanish.append(line)
         return words_spanish
-
-        
