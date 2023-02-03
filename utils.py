@@ -5,8 +5,6 @@ def welcome(): # Función que imprime mensaje de bienvenida.
     print("#" * 34)
     print("¡BIENVENIDO AL JUEGO DEL AHORCADO!")
     print("#" * 34)
-    good_luck = "¡Buena suerte!"
-    return good_luck
 
 def read(): # Función para leer .txt de palabras en Español y devolverlas en una lista.
     words_spanish = []
@@ -28,6 +26,15 @@ def show_number_letters(word_chosen): # Función que define los espacios de las 
     spaces = ["_" for i in range(number_letters)]
     return spaces
 
+def print_spaces(spaces): # Imprime lista de espacios vacios y modificados.
+    for i in spaces:
+        print(i, end=" ")
+
 def letter_gamer(): # Función para ingresar la letra a jugar.
     letter = input("Ingrese una letra: ")
     return letter
+
+def insert_letter(spaces,position, letter_gamer):
+    spaces.insert(position,letter_gamer) #Inserta la letra en los espacios.
+    spaces.pop(position + 1) #Elimina el espacio reemplazado por la letra.
+    return spaces
