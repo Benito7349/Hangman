@@ -38,3 +38,8 @@ def insert_letter(spaces,position, letter_gamer):
     spaces.insert(position,letter_gamer) #Inserta la letra en los espacios.
     spaces.pop(position + 1) #Elimina el espacio reemplazado por la letra.
     return spaces
+
+def farewell():
+    print("#" * 17)
+    print("¡JUEGO TERMINADO!")
+    print("#" * 17)
