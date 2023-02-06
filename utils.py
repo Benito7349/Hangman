@@ -45,7 +45,7 @@ def word_in_construction(spaces):
     word_in_construction = word_in_construction.replace(" ","")
     return word_in_construction
 
-def farewell():
-    print("#" * 17)
-    print("¡JUEGO TERMINADO!")
-    print("#" * 17)
+def farewell(msjs_final,multiplicator):
+    print("#" * multiplicator)
+    print(msjs_final)
+    print("#" * multiplicator)

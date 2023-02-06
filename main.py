@@ -11,6 +11,8 @@ def run():
 
   intentos = 1
   msj = "¡¡Tu estas ahorcado!!"
+  msjs_final = ["¡GANASTE!","¡PERDISTE! :(","¡JUEGO TERMINADO!"]
+  multiplicator = [9,13,17]
   while intentos < 8:
     letter_gamer = utils.letter_gamer()
     final = ""
@@ -43,17 +45,13 @@ def run():
       
   print()
   if final == "SI":
-    print("#" * 9)
-    print("¡GANASTE!")
-    print("#" * 9)
+    utils.farewell(msjs_final[0],multiplicator[0])
   else:
-    print("#" * 13)
-    print("¡PERDISTE! :(")
-    print("#" * 13)
+    utils.farewell(msjs_final[1],multiplicator[1])
     print()
     print(f"La palabra era: {word_chosen}")
   print()
-  utils.farewell()
+  utils.farewell(msjs_final[2],multiplicator[2])
  
 if __name__ == '__main__': #Es para ejecutar el archivo main.py desde la consola.
   run()
