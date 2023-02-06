@@ -11,9 +11,9 @@ def run():
 
   intentos = 1
   msj = "¡¡Tu estas ahorcado!!"
-  print(word_chosen)
   while intentos < 8:
     letter_gamer = utils.letter_gamer()
+    final = ""
     if letter_gamer in word_chosen:
       if word_chosen.count(letter_gamer) == 1:
         position = word_chosen.find(letter_gamer) #Encuentra 1ra posición de la letra ingresada.
@@ -21,6 +21,7 @@ def run():
         utils.print_spaces(spaces)
         word_in_construction = utils.word_in_construction(spaces)
         if word_in_construction == word_chosen:
+          final = "SI"
           break
         print()
       elif word_chosen.count(letter_gamer) == 2:
@@ -31,6 +32,7 @@ def run():
         utils.print_spaces(spaces)
         word_in_construction = utils.word_in_construction(spaces)
         if word_in_construction == word_chosen:
+          final = "SI"
           break
         print()
     else:
@@ -38,9 +40,19 @@ def run():
       utils.print_spaces(spaces)
       intentos += 1
       print()
-  #print("Win")
+      
   print()
-  print(f"La palabra era: {word_chosen}")
+  if final == "SI":
+    print("#" * 9)
+    print("¡GANASTE!")
+    print("#" * 9)
+  else:
+    print("#" * 13)
+    print("¡PERDISTE! :(")
+    print("#" * 13)
+    print()
+    print(f"La palabra era: {word_chosen}")
+  print()
   utils.farewell()
  
 if __name__ == '__main__': #Es para ejecutar el archivo main.py desde la consola.
