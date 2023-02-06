@@ -39,6 +39,12 @@ def insert_letter(spaces,position, letter_gamer):
     spaces.pop(position + 1) #Elimina el espacio reemplazado por la letra.
     return spaces
 
+def word_in_construction(spaces):
+    word_in_construction = spaces
+    word_in_construction = ' '.join(word_in_construction)
+    word_in_construction = word_in_construction.replace(" ","")
+    return word_in_construction
+
 def farewell():
     print("#" * 17)
     print("¡JUEGO TERMINADO!")

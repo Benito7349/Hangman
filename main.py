@@ -11,6 +11,7 @@ def run():
 
   intentos = 1
   msj = "¡¡Tu estas ahorcado!!"
+  print(word_chosen)
   while intentos < 8:
     letter_gamer = utils.letter_gamer()
     if letter_gamer in word_chosen:
@@ -18,19 +19,27 @@ def run():
         position = word_chosen.find(letter_gamer) #Encuentra 1ra posición de la letra ingresada.
         utils.insert_letter(spaces,position,letter_gamer)
         utils.print_spaces(spaces)
+        word_in_construction = utils.word_in_construction(spaces)
+        if word_in_construction == word_chosen:
+          break
+        print()
       elif word_chosen.count(letter_gamer) == 2:
         position = word_chosen.find(letter_gamer) #Encuentra última posición de la letra ingresada.
         utils.insert_letter(spaces,position,letter_gamer)
         position = word_chosen.rfind(letter_gamer)
         utils.insert_letter(spaces,position,letter_gamer)
         utils.print_spaces(spaces)
-      print()
+        word_in_construction = utils.word_in_construction(spaces)
+        if word_in_construction == word_chosen:
+          break
+        print()
     else:
       print(msj[0:intentos * 3])
       utils.print_spaces(spaces)
       intentos += 1
       print()
-
+  #print("Win")
+  print()
   print(f"La palabra era: {word_chosen}")
   utils.farewell()
  
