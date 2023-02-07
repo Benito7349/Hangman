@@ -39,13 +39,13 @@ def insert_letter(spaces,position, letter_gamer):
     spaces.pop(position + 1) #Elimina el espacio reemplazado por la letra.
     return spaces
 
-def word_in_construction(spaces):
+def word_in_construction(spaces): #Convierte la lista de _ y letras a un str y elimina los espacios.
     word_in_construction = spaces
     word_in_construction = ' '.join(word_in_construction)
     word_in_construction = word_in_construction.replace(" ","")
     return word_in_construction
 
-def farewell(msjs_final,multiplicator):
+def farewell(msjs_final,multiplicator): #Imprime mensajes de despedida.
     print("#" * multiplicator)
     print(msjs_final)
     print("#" * multiplicator)

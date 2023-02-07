@@ -12,7 +12,7 @@ def run():
   intentos = 1
   msj = "¡¡Tu estas ahorcado!!"
   msjs_final = ["¡GANASTE!","¡PERDISTE! :(","¡JUEGO TERMINADO!"]
-  multiplicator = [9,13,17]
+  multiplicator = [len(msjs_final[0]),len(msjs_final[1]),len(msjs_final[2])]
   while intentos < 8:
     letter_gamer = utils.letter_gamer()
     final = ""
@@ -27,9 +27,23 @@ def run():
           break
         print()
       elif word_chosen.count(letter_gamer) == 2:
-        position = word_chosen.find(letter_gamer) #Encuentra última posición de la letra ingresada.
+        position = word_chosen.find(letter_gamer) 
         utils.insert_letter(spaces,position,letter_gamer)
-        position = word_chosen.rfind(letter_gamer)
+        position = word_chosen.rfind(letter_gamer) #Encuentra última posición de la letra ingresada.
+        utils.insert_letter(spaces,position,letter_gamer)
+        utils.print_spaces(spaces)
+        word_in_construction = utils.word_in_construction(spaces)
+        if word_in_construction == word_chosen:
+          final = "SI"
+          break
+        print()
+      elif word_chosen.count(letter_gamer) == 3:
+        position = word_chosen.find(letter_gamer)
+        utils.insert_letter(spaces,position,letter_gamer)
+        word_chosen_cut = word_chosen.replace(letter_gamer,'',1)#Encuentra segunda posición
+        position = word_chosen_cut.find(letter_gamer) + 1       #de la letra ingresada.
+        utils.insert_letter(spaces,position,letter_gamer)
+        position = word_chosen.rfind(letter_gamer) #Encuentra última posición de la letra ingresada.
         utils.insert_letter(spaces,position,letter_gamer)
         utils.print_spaces(spaces)
         word_in_construction = utils.word_in_construction(spaces)
